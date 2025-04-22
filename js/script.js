@@ -182,16 +182,27 @@ async function main() {
     currentSong.currentTime = currentSong.duration * pct;
   });
 
-  volSlider.addEventListener("input", (e) => {
-    currentSong.volume = e.target.value / 100;
-    volIcon.src = currentSong.volume === 0 ? "img/mute.svg" : "img/volume.svg";
-  });
+  // Volume Slider
+volSlider.addEventListener("input", (e) => {
+  const volume = e.target.value / 100;
+  currentSong.volume = volume;
+  currentSong.muted = volume === 0; // auto-mute if set to 0
+  volIcon.src = currentSong.muted ? "img/mute.svg" : "img/volume.svg";
+});
 
-  volIcon.addEventListener("click", () => {
-    currentSong.muted = !currentSong.muted;
-    volIcon.src = currentSong.muted ? "img/mute.svg" : "img/volume.svg";
-    volSlider.value = currentSong.muted ? 0 : currentSong.volume * 100;
-  });
+// Mute Icon
+volIcon.addEventListener("click", () => {
+  currentSong.muted = !currentSong.muted;
+  volIcon.src = currentSong.muted ? "img/mute.svg" : "img/volume.svg";
+
+  // Reflect mute visually without changing real volume value
+  if (currentSong.muted) {
+    volSlider.value = 0;
+  } else {
+    volSlider.value = currentSong.volume * 100;
+  }
+});
+
 
   // Hamburger and close
   document.querySelector(".hamburgerContainer").addEventListener("click", () => {
