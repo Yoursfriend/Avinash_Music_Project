@@ -188,15 +188,9 @@ async function main() {
   });
 
   volIcon.addEventListener("click", () => {
-    if (volIcon.src.includes("volume.svg")) {
-      volIcon.src = "img/mute.svg";
-      volSlider.value = 0;
-      currentSong.volume = 0;
-    } else {
-      volIcon.src = "img/volume.svg";
-      volSlider.value = 40;
-      currentSong.volume = 0.1;
-    }
+    currentSong.muted = !currentSong.muted;
+    volIcon.src = currentSong.muted ? "img/mute.svg" : "img/volume.svg";
+    volSlider.value = currentSong.muted ? 0 : currentSong.volume * 100;
   });
 
   // Hamburger and close
