@@ -1,0 +1,30 @@
+[
+    {
+      "folder": "Diljit",
+      "cover": "cover.jpg",
+      "title": "Diljit Dosanjh",
+      "description": "Diljit hits…",
+      "tracks": ["Born To Shine.mp3","Lalkara.mp3"]
+    },
+    {
+        "folder": "karan",
+        "cover": "cover.jpg",
+        "title": "Karan Aujla",
+        "description": "Latest hits…",
+        "tracks": ["Admirin You.mp3","Wavy.mp3","Winning Speech.mp3"]
+      },
+      {
+        "folder": "Punjabi",
+        "cover": "cover.jpg",
+        "title": "Punjabi Hits",
+        "description": "Latest hits…",
+        "tracks": ["Her.mp3","King Shit.mp3","We Rollin.mp3"]
+      },
+      {
+        "folder": "Shubh",
+        "cover": "cover.jpg",
+        "title": "Shubh Hits",
+        "description": "Latest hits…",
+        "tracks": ["Baller.mp3","Her.mp3","King Shit.mp3","We Rollin.mp3"]
+      }
+  ]
